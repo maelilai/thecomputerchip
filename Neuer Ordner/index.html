@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Computer Chip – From Sand to the AI Era</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.8;
+      background: #111;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #333;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.6rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .nav-title {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      transition: background 0.2s;
+    }
+
+    .nav-links a:hover { background: #333; }
+
+    /* Hero */
+
+    .hero {
+      background: radial-gradient(circle at top left, #e9ccbc, #BD7469);
+      padding: 4rem 1.5rem 3rem;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 720px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-tag {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.6rem;
+      opacity: 0.8;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 3.4vw, 3.3rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 38rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .hero-chip {
+      width: 100%;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.35);
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      background: #000;
+    }
+
+    .hero-chip img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    section {
+      padding: 2.7rem 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #ffab91;
+      margin-bottom: 0.4rem;
+    }
+
+    h2 { font-size: 1.9rem; margin-bottom: 0.6rem; }
+    h3 { font-size: 1.35rem; margin-top: 1.6rem; margin-bottom: 0.45rem; }
+
+    p {
+      margin-bottom: 0.9rem;
+      color: #e0e0e0;
+    }
+
+    ul { margin: 0.5rem 0 0.9rem 1.2rem; }
+    li { margin-bottom: 0.35rem; }
+
+    .grid { display: grid; gap: 1.5rem; }
+
+    @media (min-width: 720px) {
+      .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 1rem;
+      padding: 1.3rem 1.35rem;
+      border: 1px solid #333;
+    }
+
+    .highlight { color: #ffcc80; font-weight: 600; }
+
+    .footer {
+      text-align: center;
+      padding-top: 2rem;
+      font-size: 0.9rem;
+      color: #bdbdbd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-title">The Computer Chip</div>
+      <div class="nav-links">
+  <a href="#intro">Intro</a>
+  <a href="#making">Making</a>
+  <a href="#uses">Uses</a>
+  <a href="#history">History</a>
+  <a href="#taiwan">Taiwan</a>
+  <a href="#ai-chips">AI & Environment</a>
+  <a href="#datacenters">AI Data Centers</a>
+  <a href="#future">Future</a>
+</div>
+    </nav>
+  </header>
+
+  <!-- Hero / Intro -->
+  <section class="hero" id="intro">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">English Presentation – Mael & Valentin</div>
+        <h1>The Computer Chip – From Sand to the AI Era</h1>
+        <p>
+          This website is an extended version of our English presentation.  
+          On the slides we only show the most important points. Here we explain
+          the same topics in more detail: how a chip is born from simple sand,
+          why it is so important in everyday life, how it enables artificial
+          intelligence and why it even influences the environment and global
+          politics.
+        </p>
+        <p>
+          You can read this page before the presentation to prepare, or after the
+          lesson if you are curious and want to go deeper. The goal is that you
+          really understand what is happening inside the tiny black squares on
+          a circuit board – like the ones you see in the picture on the right.
+        </p>
+        <div class="hero-badge">
+          <span>⚙️</span>
+          <span>Chips · AI · Environment · Future</span>
+        </div>
+      </div>
+      <div class="hero-chip">
+  <img src="chip-intro.jpg"
+       alt="Close-up view of computer chips on a circuit board"
+       style="width:100%; height:100%; object-fit:cover; display:block;">
+</div>
+  </section>
+
+  <main>
+    <!-- MAKING CHIPS -->
+    <section id="making">
+      <div class="section-tag">Making Computer Chips</div>
+      <h2>From Sand to Silicon Wafers</h2>
+
+      <p>
+        At the beginning of every modern computer chip there is something that
+        looks very unspectacular: sand. More exactly, factories use quartz sand
+        that contains a lot of <span class="highlight">silicon dioxide</span>.
+        Silicon is a perfect material for chips because it behaves like a
+        semiconductor. That means it sometimes conducts electricity and
+        sometimes blocks it – exactly what we need for building tiny switches.
+      </p>
+
+      <p>
+        However, the silicon inside a chip must be almost perfectly pure.
+        Normal sand contains many other elements that would disturb the
+        electronics. In special high-temperature processes the silicon is
+        separated, cleaned and melted. From this melt, a long, round crystal is
+        pulled very slowly. This is called a <span class="highlight">silicon
+        ingot</span>. It can be more than a meter long, but the structure inside
+        is extremely ordered.
+      </p>
+
+      <p>
+        The ingot is then sliced into very thin discs – the
+        <span class="highlight">wafers</span>. A typical wafer has a diameter
+        of 300 mm and is polished until it is as smooth as a mirror.
+        On this shiny surface, the future circuits of hundreds or thousands of
+        chips will be created.
+      </p>
+
+      <h3>Photolithography – Drawing Tiny Circuits with Light</h3>
+      <p>
+        To build the circuits, the wafer is coated with a light-sensitive
+        material called photoresist. A pattern of the circuit is projected onto
+        the wafer using ultraviolet light and something like a very precise
+        slide called a mask. Wherever the light hits, the properties of the
+        photoresist change.
+      </p>
+
+      <p>
+        Afterwards the wafer is put into a chemical bath. Parts of the
+        photoresist are washed away, other parts stay and protect the silicon
+        underneath. In the next step, the unprotected silicon is etched away or
+        doped with other atoms to change its electrical properties. In this way
+        transistors, wires and insulating layers are formed.
+      </p>
+
+      <p>
+        This procedure is repeated many times with different masks and
+        different chemicals. Modern high-end chips can require more than
+        100 separate processing steps. The structures that are created are
+        unbelievably small: a single transistor on a 3-nanometre chip is much
+        smaller than a virus. A finished chip can contain tens of billions of
+        these switches.
+      </p>
+
+      <h3>Testing, Cutting and Packaging</h3>
+      <p>
+        When all layers are done, the wafer is tested while it is still in one
+        piece. Tiny probes touch contact points on each chip and check whether
+        it works as expected. Chips that already show errors are marked.
+      </p>
+
+      <p>
+        Then the wafer is cut into individual rectangular dies. Each die is
+        placed into a package that protects it from damage and allows it to be
+        soldered onto a circuit board. Very fine metal wires or microscopic
+        bumps connect the chip inside the package to the visible metal contacts
+        on the outside.
+      </p>
+
+      <p>
+        Finally, the finished chips are tested once again under different
+        temperatures and loads. Only the ones that pass all tests are shipped to
+        customers and built into devices. A single factory can produce millions
+        of chips per month, but the whole process requires extremely clean
+        rooms, expensive machines and a lot of know-how.
+      </p>
+
+      <div style="
+        margin: 2rem 0; 
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0px 10px 35px rgba(0,0,0,0.35);
+      ">
+        <iframe 
+          width="100%" 
+          height="420" 
+          src="https://www.youtube.com/embed/IkRXpFIRUl4?si=jHyooYUpC-MPD1KV" 
+          title="How are microhips made??" 
+          style="border: none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- WHERE CHIPS ARE USED -->
+    <section id="uses">
+      <div class="section-tag">Where Chips Are Used</div>
+      <h2>Where Computer Chips Work in Our Lives</h2>
+
+      <p>
+        If all computer chips stopped working at the same moment, our modern
+        world would almost immediately come to a standstill. That sounds
+        dramatic, but it shows how deeply chips are integrated into our lives.
+        Often we do not even notice them, because they work silently in the
+        background.
+      </p>
+
+      <h3>Everyday Devices</h3>
+      <p>
+        In smartphones, tablets and laptops, the main processor chip executes
+        apps and the operating system. Additional chips handle mobile networks,
+        Wi-Fi, Bluetooth, the camera, charging and the display. Even a simple
+        action like taking a photo involves many chips working together:
+        one controls the sensor, one processes the image, another stores it and
+        others send it to the cloud.
+      </p>
+
+      <p>
+        At home, chips control washing machines, dishwashers, ovens, fridges,
+        robotic vacuum cleaners and smart speakers. They make sure programmes
+        run correctly, temperatures are measured and energy is used efficiently.
+        Without chips, many modern devices would go back to being completely
+        mechanical and much less flexible.
+      </p>
+
+      <h3>Medicine, Industry and Agriculture</h3>
+      <p>
+        In hospitals, computer chips are built into heart monitors,
+        ventilators, MRI scanners and surgery robots. They help doctors measure
+        important values precisely and react quickly when something changes.
+        In industry, chips steer robots on assembly lines, manage warehouses
+        and monitor machines so that they do not break suddenly.
+      </p>
+
+      <p>
+        Even agriculture now relies on chips: tractors use GPS to drive more
+        exactly, drones monitor fields from the air and sensors in the soil
+        measure moisture and nutrients. All these systems need chips to collect
+        data and make smart decisions.
+      </p>
+
+      <h3>Large Systems and Data Centres</h3>
+      <p>
+        In big computers and data centres, thousands of chips are connected in
+        racks. They store our photos, run online games, stream films and answer
+        our search queries in fractions of a second. More and more often, they
+        also run <span class="highlight">artificial intelligence</span> that
+        recognises speech, translates languages and detects patterns in large
+        data sets.
+      </p>
+
+      <p>
+        Because chips are so universal, they are sometimes called the
+        “building blocks of the digital age”. Understanding them means
+        understanding a big part of how the modern world functions.
+      </p>
+    </section>
+
+    <!-- HISTORY / PROGRESS / CRISIS -->
+    <section id="history">
+      <div class="section-tag">Strong Progress, AI Chips and the Chip Crisis</div>
+      <h2>Chips Over Time – Progress, AI and Crisis</h2>
+
+      <h3>1. Strong Technological Progress</h3>
+      <p>
+        In the first decades of chip development, engineers saw incredibly fast
+        progress. Every new generation of chips could hold many more transistors
+        than the previous one. This development is known as
+        <span class="highlight">Moore’s law</span>. It states that the number of
+        transistors on a chip roughly doubles every two years.
+      </p>
+
+      <p>
+        Because of this doubling, computing power grew exponentially.
+        What once required a whole room full of hardware now fits into a
+        laptop or even a smartphone. At the same time, each individual
+        calculation became cheaper and used less energy. This made digital
+        technology attractive for many new areas – from music players to
+        navigation and later to smartphones.
+      </p>
+
+      <h3>2. The Rise of Special AI Chips</h3>
+      <p>
+        When machine learning and deep learning started to grow, classical
+        processors reached their limits. Training a large AI model can require
+        billions of mathematical operations. To handle this, developers began
+        using graphics processing units (GPUs) and later designed special
+        <span class="highlight">AI accelerators</span>.
+      </p>
+
+      <p>
+        These chips are optimised for doing many simple calculations in
+        parallel. This makes them ideal for operations in neural networks.
+        Thanks to them, applications like face recognition, automatic
+        translation and advanced voice assistants became fast enough to be
+        used in real products. Without AI chips, this would either be too slow
+        or far too expensive.
+      </p>
+
+      <h3>3. The Global Chip Crisis</h3>
+      <p>
+        During the COVID-19 pandemic the world experienced a global chip
+        shortage. Some factories had to stop production because of lockdowns,
+        while demand for laptops, webcams and game consoles increased.
+        At the same time, car manufacturers had cancelled chip orders earlier
+        in the crisis and later suddenly needed them again.
+      </p>
+
+      <p>
+        Because building new chip factories takes years, the system could not
+        react quickly. As a result, car plants stood still, delivery times for
+        electronics exploded and prices rose. The crisis showed how fragile
+        the supply chain is and how much our economy depends on a small number
+        of high-tech factories.
+      </p>
+    </section>
+
+    <!-- TAIWAN -->
+    <section id="taiwan">
+      <div class="section-tag">Taiwan and the Power of the Chip Industry</div>
+      <h2>Taiwan – A Central Player in the Chip World</h2>
+
+      <p>
+        Taiwan is one of the most important locations for chip production on
+        the planet. A large part of the world’s most advanced chips is
+        manufactured there, especially by the company
+        <span class="highlight">TSMC</span>. Its factories produce chips for
+        many famous brands – including smartphone makers, car manufacturers and
+        cloud providers.
+      </p>
+
+      <p>
+        What makes Taiwan special is not only the number of factories, but the
+        very high technical level. Producing chips with structures of only a
+        few nanometres requires extremely precise machines, long experience and
+        a highly trained workforce. At the moment, only very few companies in
+        the world can do this at large scale.
+      </p>
+
+      <p>
+        Because of this, many countries depend on chips from Taiwan. If the
+        factories there had to stop – for example due to a natural disaster or
+        political conflict – the effects would be felt worldwide. Cars could
+        not be finished, smartphones would become more expensive and cloud
+        services might slow down.
+      </p>
+
+      <p>
+        That is why governments in the USA, Europe and Asia are now investing
+        billions of dollars to build more chip factories in their own regions.
+        They want to reduce their dependence on a single island and protect
+        themselves from future crises. Chips have become not only a question
+        of technology, but also of economic security and political power.
+      </p>
+
+            <div style="
+        margin: 2rem 0; 
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0px 10px 35px rgba(0,0,0,0.35);
+      ">
+        <iframe 
+          width="100%" 
+          height="420" 
+          src="https://www.youtube.com/embed/tMXIPOiSkbI?si=bnjgi_P8kd4261pv" 
+          title="Why the U.S. and China are So Interested in Taiwan" 
+          style="border: none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- AI CHIPS & ENVIRONMENT -->
+    <section id="ai-chips">
+      <div class="section-tag">Chips for Artificial Intelligence</div>
+      <h2>AI Chips – The New Gold and an Environmental Challenge</h2>
+
+      <p>
+        AI chips are sometimes called the <span class="highlight">new gold</span>.
+        They are scarce, expensive and extremely valuable for companies that
+        want to develop or use artificial intelligence. Big tech firms order
+        whole warehouses full of these chips to train ever larger AI models.
+      </p>
+
+      <p>
+        To operate them, companies build enormous <span class="highlight">
+        data centres</span>. In such a building, thousands or even hundreds of
+        thousands of servers run day and night. Many of them are equipped with
+        powerful GPUs or other AI accelerators that consume a lot of electricity.
+      </p>
+
+      <h3>Energy Use and CO₂ Emissions</h3>
+      <p>
+        Data centres already account for a noticeable part of global energy
+        consumption. When they use electricity produced from coal, oil or gas,
+        this leads to high <span class="highlight">CO₂ emissions</span>.
+        Training one very large AI model can use as much energy as several
+        households over many years.
+      </p>
+
+      <p>
+        Because of this, there is now a strong discussion: How much AI is
+        useful and worth the energy, and where do we need to be more careful?
+        Some companies promise to power their data centres completely with
+        renewable energy, but this is not always available everywhere and at
+        all times.
+      </p>
+
+      <h3>Water Use and Local Conflicts</h3>
+      <p>
+        Another issue is water. In many data centres, water is used to cool
+        the servers. In regions that are already dry, this can create tension
+        with local communities and farmers who also need water. Some planned
+        AI data centres in the USA have faced criticism for exactly this reason.
+      </p>
+
+      <p>
+        All of this shows that AI is not just a question of clever software.
+        It is also a question of infrastructure and resources. If AI is to be
+        sustainable, we need more efficient chips, better cooling technologies
+        and electricity from renewable sources such as solar, wind and hydro.
+      </p>
+
+      <p>
+        In summary, AI chips drive innovation and open new possibilities –
+        from medical research to language tools. At the same time they remind
+        us that every digital service has a physical side: servers, power
+        plants, cables and cooling systems in the real world.
+      </p>
+    </section>
+
+    <!-- AI DATA CENTERS & MEMPHIS -->
+    <section id="datacenters">
+      <div class="section-tag">AI Data Centers & Environment</div>
+      <h2>AI Data Centers – Powering AI, Polluting Cities?</h2>
+
+      <p>
+        AI chips do not work alone. To run modern artificial intelligence,
+        companies build huge <span class="highlight">AI data centers</span>.
+        These are large buildings filled with racks of servers and thousands
+        of GPUs or other AI accelerators. Together, they train AI models,
+        answer questions, generate images and run many online services.
+      </p>
+
+      <p>
+        But this comes with a cost. AI data centers need enormous amounts of
+        <span class="highlight">electricity</span> to power the chips and to
+        cool them. If this electricity comes mainly from fossil fuels such as
+        natural gas or coal, the result is a lot of CO₂ and other pollution.
+        In some regions, data centers also use huge quantities of water for
+        cooling, which can cause conflicts in areas that already suffer from
+        water stress.
+      </p>
+
+      <h3>Case Study: xAI Data Center in Memphis, Tennessee</h3>
+      <p>
+        A very current example is the AI supercomputer project of
+        <span class="highlight">xAI</span>, the AI company founded by Elon
+        Musk, in <span class="highlight">South Memphis</span>, Tennessee.
+        The supercomputer, called <em>Colossus</em>, is built to power
+        xAI’s chatbot and other AI systems. To feed this machine with
+        energy, xAI installed a large number of <span class="highlight">
+        methane gas turbines</span> directly at the data center site.
+      </p>
+
+      <p>
+        According to environmental groups, xAI set up dozens of these gas
+        turbines near residential areas in South Memphis. Together, they have
+        the capacity to produce hundreds of megawatts of power – enough to
+        supply electricity to tens of thousands of homes. However, the
+        turbines also emit <span class="highlight">nitrogen oxides (NOx)</span>,
+        formaldehyde and other pollutants that are linked to asthma,
+        heart problems and an increased cancer risk.
+      </p>
+
+      <p>
+        Local organisations like the Southern Environmental Law Center,
+        NAACP and community groups in South Memphis argue that the data center
+        makes air quality worse in a neighbourhood that is already heavily
+        burdened by industrial pollution and has a high share of
+        low-income and Black residents. They criticise that xAI has operated
+        some turbines without proper permits and that people in the area were
+        not transparently informed about the plans.
+      </p>
+
+      <p>
+        This example shows how the AI boom can create <span class="highlight">
+        environmental justice</span> questions: Who gets the benefits of AI,
+        and who has to live with the pollution and health risks of the
+        supporting infrastructure?
+      </p>
+
+      <h3>How This Connects Back to Chips</h3>
+      <p>
+        Inside a data center like the one in Memphis, hundreds of thousands of
+        computer chips are working at the same time. Many of them are powerful
+        AI chips from companies like Nvidia. Each chip on its own is small,
+        but together they form a gigantic power-hungry machine. Without the
+        chips, there would be no need for the turbines – and without the
+        turbines, there would not be enough electricity for the chips.
+      </p>
+
+      <p>
+        So when we talk about the environmental impact of computer chips,
+        we also have to look at the whole ecosystem: chip factories, data
+        centers, power plants and the communities around them. The goal for
+        the future must be to make this system more <span class="highlight">
+        sustainable</span> – for example by using renewable energy, improving
+        cooling and designing AI models that need less computing power.
+      </p>
+
+      <h3>Video: What Are Computer Chips Made Of?</h3>
+      <p>
+        The following video explains what computer chips are made of and how
+        they are produced. It helps to understand what is actually inside all
+        those servers in data centers like the xAI facility in Memphis.
+      </p>
+
+      <div style="
+        margin: 2rem 0; 
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0px 10px 35px rgba(0,0,0,0.35);
+      ">
+        <iframe 
+          width="100%" 
+          height="420" 
+          src="https://www.youtube.com/embed/3VJT2JeDCyw" 
+          title="What Are Computer Chips Made Of?" 
+          style="border: none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    
+    <!-- FUTURE OF CHIPS -->
+    <section id="future">
+      <div class="section-tag">The Future of Chips</div>
+      <h2>The Future of Chips – Beyond Simple Shrinking</h2>
+
+      <p>
+        For many years, “better chips” mainly meant “smaller structures”.
+        This strategy is slowly reaching its limits. When transistors become
+        only a few atoms wide, quantum effects disturb their behaviour and
+        manufacturing becomes incredibly difficult and expensive.
+      </p>
+
+      <h3>Quantum Technologies</h3>
+      <p>
+        One possible next step is <span class="highlight">quantum computing</span>.
+        Quantum chips use qubits instead of classical bits. Qubits can be in
+        several states at the same time, which can make some calculations much
+        faster. For example, quantum computers could help to design new
+        materials, simulate molecules for medicine or break certain types of
+        encryption.
+      </p>
+
+      <p>
+        However, quantum computers are still in a very early stage.
+        They are extremely sensitive to noise and need to be cooled to almost
+        absolute zero. It will probably take many years until they are used
+        widely, and even then they will only be helpful for specific problems.
+      </p>
+
+      <h3>New Materials</h3>
+      <p>
+        Another research direction are new materials like
+        <span class="highlight">graphene</span> or other two-dimensional
+        semiconductors. These materials are sometimes only one atom thick and
+        have exciting electrical properties. They could allow faster switching
+        speeds or lower energy consumption.
+      </p>
+
+      <p>
+        If such materials can be produced cheaply and reliably, they may
+        complement or partly replace silicon in some components. Flexible
+        electronics, transparent displays or sensors integrated into clothing
+        are possible applications.
+      </p>
+
+      <h3>Smarter Architectures</h3>
+      <p>
+        Even without completely new physics we can build smarter chips.
+        <span class="highlight">Neuromorphic chips</span>, for example,
+        imitate the structure of the human brain. Instead of separating
+        memory and processing, they combine both and send small electrical
+        spikes between artificial neurons. This can make certain AI tasks
+        much more energy-efficient.
+      </p>
+
+      <p>
+        Other architectures bring memory and processing closer together or
+        specialise chips for concrete tasks such as video decoding, encryption
+        or sensor fusion. The goal is not only maximum speed, but also a good
+        balance between performance, energy and cost.
+      </p>
+
+      <p>
+        The future of chips will therefore be a mix of many ideas:
+        some based on silicon, some completely new. What they all have in
+        common is the same mission: to handle more information with less
+        energy and to make the digital world smarter without overloading the
+        planet.
+      </p>
+    </section>
+
+    <!-- THANKS -->
+    <section>
+      <div class="section-tag">End</div>
+      <h2>Thank You for Reading</h2>
+      <p>
+        This website is meant as a detailed explanation of our topic.
+        If you have read everything, you now understand much more than just
+        “chips make computers work”. You have seen how they are built from
+        sand, where they are used, why AI needs special chips, how this
+        affects the environment and which ideas researchers have for the
+        future.
+      </p>
+      <p class="footer">
+        Created by Mael · The Computer Chip presentation website
+      </p>
+    </section>
+  </main>
+</body>
+</html>
