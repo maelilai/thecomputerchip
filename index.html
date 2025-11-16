@@ -186,9 +186,13 @@
     }
 
     @media (max-width: 720px) {
+      /* NAVIGATION */
+
       .nav {
         padding: 0.6rem 1rem;
-        align-items: center;
+        flex-direction: column;       /* statt Reihe -> Spalte */
+        align-items: flex-start;      /* alles links ausrichten */
+        gap: 0.4rem;
       }
 
       .nav-title {
@@ -196,14 +200,15 @@
       }
 
       .nav-toggle {
-        display: block; /* Button nur auf Handy zeigen */
+        display: block;               /* Burger nur auf Handy anzeigen */
+        align-self: flex-end;         /* nach rechts schieben */
       }
 
       .nav-links {
-        display: none; /* Menü erst mal versteckt */
+        display: none;                /* erst mal versteckt */
         flex-direction: column;
         width: 100%;
-        margin-top: 0.6rem;
+        margin-top: 0.2rem;
         gap: 0.4rem;
       }
 
@@ -212,8 +217,10 @@
       }
 
       .nav-links.open {
-        display: flex; /* wird per JS sichtbar gemacht */
+        display: flex;                /* wird per JS sichtbar gemacht */
       }
+
+      /* HERO / TEXT */
 
       .hero {
         padding: 2.5rem 1rem 2rem;
