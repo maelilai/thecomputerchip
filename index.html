@@ -185,83 +185,90 @@
       color: #bdbdbd;
     }
 
-    @media (max-width: 720px) {
-      /* NAVIGATION */
+@media (max-width: 720px) {
 
-      .nav {
-        padding: 0.6rem 1rem;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
+  /* NAVIGATION */
+  .nav {
+    padding: 0.6rem 1rem;
+    flex-direction: row;           /* Titel + Burger in einer Reihe */
+    justify-content: space-between;
+    align-items: center;
+    position: relative;            /* Referenz für das absolute Menü */
+  }
 
-      .nav-title {
-        font-size: 0.95rem;
-      }
+  .nav-title {
+    font-size: 1rem;
+  }
 
-      .nav-toggle {
-        display: block; /* Button nur auf Handy zeigen */
-        margin-left: auto;
-      }
+  .nav-toggle {
+    display: block;                /* Burger auf Handy sichtbar */
+    margin-left: 1rem;
+  }
 
-      .nav-links {
-        display: none;                /* erst mal versteckt */
-        flex-direction: column;
-        width: 100%;
-        margin-top: 0.2rem;
-        gap: 0.4rem;
-      }
+  .nav-links {
+    position: absolute;            /* schwebt über dem Inhalt */
+    top: 100%;                     /* direkt unter dem Header */
+    left: 0;
+    right: 0;
+    background: rgba(10,10,10,0.98);
+    border-bottom: 1px solid #333;
+    display: none;                 /* standard: versteckt */
+    flex-direction: column;
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.6rem;
+    z-index: 200;                  /* über dem Rest */
+  }
 
-      .nav-links a {
-        padding: 0.35rem 0;
-      }
+  .nav-links a {
+    padding: 0.35rem 0;
+  }
 
-      .nav-links.open {
-        display: flex;                /* wird per JS sichtbar gemacht */
-      }
+  .nav-links.open {
+    display: flex;                 /* wird per JS ein-/ausgeblendet */
+  }
 
-      /* HERO / TEXT */
+  /* HERO */
+  .hero {
+    padding: 2.5rem 1rem 2rem;
+  }
 
-      .hero {
-        padding: 2.5rem 1rem 2rem;
-      }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
 
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 2rem;
-        text-align: center;
-      }
+  .hero-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-      .hero-badge {
-        margin-left: auto;
-        margin-right: auto;
-      }
+  .hero-chip {
+    max-width: 320px;
+    margin: 0 auto;
+  }
 
-      .hero-chip {
-        max-width: 320px;
-        margin: 0 auto;
-      }
+  /* TEXT */
+  main {
+    padding: 2rem 1rem 3rem;
+  }
 
-      main {
-        padding: 2rem 1rem 3rem;
-      }
+  section {
+    padding: 2rem 0;
+  }
 
-      section {
-        padding: 2rem 0;
-      }
+  h2 {
+    font-size: 1.4rem;
+  }
 
-      h2 {
-        font-size: 1.4rem;
-      }
+  h3 {
+    font-size: 1.05rem;
+  }
 
-      h3 {
-        font-size: 1.05rem;
-      }
-
-      p {
-        font-size: 0.95rem;
-      }
-    }
+  p {
+    font-size: 0.95rem;
+  }
+}
   </style>
 </head>
 <body>
