@@ -190,9 +190,9 @@
 
       .nav {
         padding: 0.6rem 1rem;
-        flex-direction: column;       /* statt Reihe -> Spalte */
-        align-items: flex-start;      /* alles links ausrichten */
-        gap: 0.4rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
 
       .nav-title {
@@ -200,8 +200,8 @@
       }
 
       .nav-toggle {
-        display: block;               /* Burger nur auf Handy anzeigen */
-        align-self: flex-end;         /* nach rechts schieben */
+        display: block; /* Button nur auf Handy zeigen */
+        margin-left: auto;
       }
 
       .nav-links {
